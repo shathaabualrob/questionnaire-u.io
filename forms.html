@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>الاستمارات</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #e8f5e9, #ffffff);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 30px;
+            margin-bottom: 30px;
+            color: #1b5e20;
+            font-weight: 700;
+        }
+
+        .form-card {
+            background: white;
+            padding: 20px;
+            margin: 15px auto;
+            border-radius: 14px;
+            width: 90%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: 0.3s ease;
+            border-left: 6px solid #43a047;
+        }
+
+        .form-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            background: #f1f8e9;
+        }
+
+        .form-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2e7d32;
+        }
+
+        .footer {
+            margin-top: 35px;
+            font-size: 14px;
+            color: #444;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 id="countryTitle">الاستمارات</h1>
+
+        <div id="forms"></div>
+
+        <div class="footer">الرجاء اختيار الاستمارة المطلوبة</div>
+    </div>
+
+    <script>
+        async function loadForms() {
+            const params = new URLSearchParams(window.location.search);
+            const country = params.get('name');
+
+            document.getElementById("countryTitle").innerText = "استمارات: " + country;
+
+            const response = await fetch("forms.json");
+            const data = await response.json();
+
+            const forms = data[country] || [];
+            const container = document.getElementById("forms");
+
+            forms.forEach(form => {
+                const card = document.createElement("div");
+                card.className = "form-card";
+                card.onclick = () => window.open(form.excelLink, "_blank");
+
+                const title = document.createElement("div");
+                title.className = "form-title";
+                title.textContent = form.formName;
+
+                card.appendChild(title);
+                container.appendChild(card);
+            });
+        }
+
+        loadForms();
+    </script>
+</body>
+</html>
