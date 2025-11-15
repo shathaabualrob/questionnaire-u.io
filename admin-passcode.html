@@ -102,12 +102,16 @@
 
         if (entered === correct) {
             localStorage.setItem("admin_auth", "true");
-            window.location.href = "admin.html";
+
+            // 🚀 الانتقال مباشرة لصفحة استمارات المشرف العام
+            window.location.href = "forms.html?name=admin_summary";
+
         } else {
             document.getElementById("errorMsg").style.display = "block";
         }
     }
 
+    // Toggle password visibility
     const input = document.getElementById("adminCode");
     const eye = document.getElementById("toggleEye");
 
@@ -121,6 +125,7 @@
         }
     };
 </script>
+
 
 </body>
 </html>
