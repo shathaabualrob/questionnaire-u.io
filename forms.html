@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>الاستمارات</title>
 
-    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
@@ -13,92 +12,86 @@
             background: linear-gradient(135deg, #e8f5e9, #ffffff);
             margin: 0;
             padding: 0;
-        }
-
-        .container {
-            max-width: 700px;
-            margin: auto;
-            padding: 60px 20px;
             text-align: center;
         }
 
-        h1 {
-            font-size: 30px;
-            margin-bottom: 30px;
-            color: #1b5e20;
-            font-weight: 700;
+        .title {
+            font-size: 32px;
+            margin: 30px 0;
+            color: #2e7d32;
+            font-weight: 800;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
         }
 
         .form-card {
-            background: white;
-            padding: 20px;
-            margin: 15px auto;
+            background: #ffffff;
+            padding: 18px;
+            margin: 12px 0;
             border-radius: 14px;
-            width: 90%;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            cursor: pointer;
-            transition: 0.3s ease;
-            border-left: 6px solid #43a047;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.10);
+            text-align: center;
         }
 
-        .form-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-            background: #f1f8e9;
-        }
-
-        .form-title {
-            font-size: 20px;
+        a {
+            display: inline-block;
+            margin-top: 10px;
+            color: white;
+            background: #2e7d32;
+            padding: 10px 14px;
+            border-radius: 10px;
+            text-decoration: none;
             font-weight: 600;
-            color: #2e7d32;
-        }
-
-        .footer {
-            margin-top: 35px;
-            font-size: 14px;
-            color: #444;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
-        <h1 id="countryTitle">الاستمارات</h1>
+    <h1 id="formsTitle" class="title">الاستمارات</h1>
 
-        <div id="forms"></div>
+    <div id="formsContainer" class="container"></div>
 
-        <div class="footer">الرجاء اختيار الاستمارة المطلوبة</div>
-    </div>
+<script>
+    async function loadForms() {
+        const params = new URLSearchParams(window.location.search);
+        const key = params.get("name");
 
-    <script>
-        async function loadForms() {
-            const params = new URLSearchParams(window.location.search);
-            const country = params.get('name');
+        const displayNames = {
+            "bahrain": "مملكة البحرين",
+            "qatar": "دولة قطر",
+            "uae": "دولة الإمارات العربية المتحدة",
+            "ksa": "المملكة العربية السعودية",
+            "oman": "سلطنة عمان",
+            "kuwait": "دولة الكويت",
+            "admin_summary": "ملخص الاستمارات للمشرف العام"
+        };
 
-            document.getElementById("countryTitle").innerText = "استمارات: " + country;
+        document.getElementById("formsTitle").innerText =
+            `استمارات: ${displayNames[key]}`;
 
-            const response = await fetch("forms.json");
-            const data = await response.json();
+        const data = await fetch("forms.json").then(r => r.json());
 
-            const forms = data[country] || [];
-            const container = document.getElementById("forms");
+        const forms = data[key];
 
-            forms.forEach(form => {
-                const card = document.createElement("div");
-                card.className = "form-card";
-                card.onclick = () => window.open(form.excelLink, "_blank");
+        const container = document.getElementById("formsContainer");
+        container.innerHTML = "";
 
-                const title = document.createElement("div");
-                title.className = "form-title";
-                title.textContent = form.formName;
+        forms.forEach(form => {
+            container.innerHTML += `
+                <div class="form-card">
+                    <h3>${form.formName}</h3>
+                    <a href="${form.excelLink}" target="_blank">فتح الإكسل</a>
+                </div>
+            `;
+        });
+    }
 
-                card.appendChild(title);
-                container.appendChild(card);
-            });
-        }
+    loadForms();
+</script>
 
-        loadForms();
-    </script>
 </body>
 </html>

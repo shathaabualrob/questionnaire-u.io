@@ -1,7 +1,7 @@
 {
-    "مملكة البحرين": [
+    "bahrain": [
         {
-            "formName": "استمارة السجلات الإدارية",
+            "formName": "استمارة السجلات الإدارية", 
             "excelLink": "https://1drv.ms/x/c/79de4a8ba54d5d0b/EQXoQGvqwIROtGngVOOtmDAByG3shIyMnS1_KASZo0ikhA?e=IVwp5H"
         },
         {
@@ -14,7 +14,7 @@
         }
     ],
 
-    "دولة قطر": [
+    "qatar": [
         {
             "formName": "استمارة السجلات الإدارية",
             "excelLink": "https://1drv.ms/x/c/79de4a8ba54d5d0b/EXI3f8L5RoNLonvGutuRHlQBhx5XHw-LA5swEgxuLba8qg?e=zhh9Ef"
@@ -29,7 +29,7 @@
         }
     ],
 
-    "دولة الإمارات العربية المتحدة": [
+    "uae": [
         {
             "formName": "استمارة السجلات الإدارية",
             "excelLink": "https://1drv.ms/x/c/79de4a8ba54d5d0b/EWgEGMXIolZBqmulOzIMxLcB3YfvL2tp2y9vfkf3vWAHmQ?e=QjKy9u"
@@ -44,7 +44,7 @@
         }
     ],
 
-    "المملكة العربية السعودية": [
+    "saudi": [
         {
             "formName": "إستمارة السجلات الإدارية",
             "excelLink": "https://1drv.ms/x/c/79de4a8ba54d5d0b/EQ0k21A1JBNBqfCLQEaCOIYBQmyBBQZeP2_P78QlVfyXcw?e=zpJJPk"
@@ -59,7 +59,7 @@
         }
     ],
 
-    "سلطنة عمان": [
+    "oman": [
         {
             "formName": "استمارة السجلات الإدارية",
             "excelLink": "https://1drv.ms/x/c/79de4a8ba54d5d0b/Eattfad8mUNHhSdJKoLPVMMB-z5DXvnEpE_7hzPDS3AzjA?e=A5HAM1"
@@ -74,18 +74,32 @@
         }
     ],
 
-    "دولة الكويت": [
+    "kuwait": [
         {
             "formName": "استمارة السجلات الإدارية",
-            "excelLink": "hhttps://1drv.ms/x/c/79de4a8ba54d5d0b/EVl4GKagbp1IipNI_T3qnKEBcEF3sH2XwjxYeSSdDoiMVg?e=hC5NbJ"
+            "excelLink": "https://1drv.ms/x/c/79de4a8ba54d5d0b/EVl4GKagbp1IipNI_T3qnKEBcEF3sH2XwjxYeSSdDoiMVg?e=hC5NbJ"
         },
         {
             "formName": "استمارة المسوح والتعدادات والدراسات",
-            "excelLink": "hhttps://1drv.ms/x/c/79de4a8ba54d5d0b/EcGPACojIEZChPD6PUh53vIB2j2ad2zE-YIErxUkpfTLug?e=qYE0LL"
+            "excelLink": "https://1drv.ms/x/c/79de4a8ba54d5d0b/EcGPACojIEZChPD6PUh53vIB2j2ad2zE-YIErxUkpfTLug?e=qYE0LL"
         },
         {
             "formName": "استمارة تحديات التدريب",
             "excelLink": "https://1drv.ms/x/c/79de4a8ba54d5d0b/EbGIkRoBgmVCmsVFc8c4_RgBerTnFJB4vyykdWPFrg9eOA?e=b9GlXF"
+        }
+    ],
+    "admin_summary": [
+        {
+            "formName": "استمارة السجلات الإدارية",
+            "excelLink": "https://1drv.ms/x/c/79de4a8ba54d5d0b/EaG1jdT_mwRBgUFC1bs4jFYB478c_3w8VZMGh4CFjYzcAw?e=8sFEvi"
+        },
+        {
+            "formName": "استمارة المسوح والتعدادات والدراسات",
+            "excelLink": "https://1drv.ms/x/c/79de4a8ba54d5d0b/EZZj5eNAqC9PqmiHzN_e7aIBmIApGWGsUmmQz9kQdTm_DA?e=7Ux7W1"
+        },
+        {
+            "formName": "استمارة تحديات التدريب",
+            "excelLink": "https://1drv.ms/x/c/79de4a8ba54d5d0b/EXIbA_dzmBlLuS3u4LWN0jMBtTAgLRavnJOE27cYMnC4Qw?e=qjFllT"
         }
     ]
 }

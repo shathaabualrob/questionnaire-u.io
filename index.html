@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>اختيار الدولة</title>
 
-    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
@@ -13,18 +12,49 @@
             background: linear-gradient(135deg, #e3f2fd, #ffffff);
             margin: 0;
             padding: 0;
+            text-align: center;
+        }
+
+        .main-title {
+            max-width: 900px;
+            margin: 80px auto 40px auto;
+            font-size: 38px;
+            font-weight: 900;
+            color: #0d47a1;
+            line-height: 1.6;
+        }
+
+        .admin-btn-top {
+            width: 100%;
+            max-width: 600px;
+            padding: 16px;
+            margin: 0 auto 20px auto;
+            background: #ff7043;
+            color: black;
+            border: none;
+            border-radius: 12px;
+            font-size: 25px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.25s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            display: block;
+        }
+
+        .admin-btn-top:hover {
+            background: #e64a19;
+            transform: translateY(-3px);
         }
 
         .container {
             max-width: 600px;
             margin: auto;
-            padding: 60px 20px;
-            text-align: center;
+            padding: 20px;
         }
 
         h1 {
-            font-size: 32px;
-            margin-bottom: 35px;
+            font-size: 30px;
+            margin-bottom: 25px;
             color: #0d47a1;
             font-weight: 700;
         }
@@ -37,8 +67,8 @@
             color: white;
             border: none;
             border-radius: 12px;
-            font-size: 20px;
-            font-weight: 600;
+            font-size: 25px;
+            font-weight: 800;
             cursor: pointer;
             transition: 0.25s ease;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -47,12 +77,11 @@
         .country-btn:hover {
             background: #1976d2;
             transform: translateY(-3px);
-            box-shadow: 0 6px 14px rgba(0,0,0,0.15);
         }
 
         .footer {
             margin-top: 40px;
-            font-size: 14px;
+            font-size: 15px;
             color: #444;
         }
     </style>
@@ -60,22 +89,31 @@
 
 <body>
 
+    <div class="main-title">
+        مسح تحديات مؤشرات الهدف الرابع لدول الخليج العربي
+    </div>
+
+    <button class="admin-btn-top" onclick="window.location.href='admin-passcode.html'">
+        خاص بالمشرف العام
+    </button>
+
     <div class="container">
+
         <h1>اختر الدولة</h1>
 
-        <button class="country-btn" onclick="openCountry('مملكة البحرين')">مملكة البحرين</button>
-        <button class="country-btn" onclick="openCountry('دولة قطر')">دولة قطر</button>
-        <button class="country-btn" onclick="openCountry('دولة الإمارات العربية المتحدة')">دولة الإمارات العربية المتحدة</button>
-        <button class="country-btn" onclick="openCountry('المملكة العربية السعودية')">المملكة العربية السعودية</button>
-        <button class="country-btn" onclick="openCountry('سلطنة عمان')">سلطنة عمان</button>
-        <button class="country-btn" onclick="openCountry('دولة الكويت')">دولة الكويت</button>
+        <button class="country-btn" onclick="openCountry('bahrain')">مملكة البحرين</button>
+        <button class="country-btn" onclick="openCountry('qatar')">دولة قطر</button>
+        <button class="country-btn" onclick="openCountry('uae')">دولة الإمارات العربية المتحدة</button>
+        <button class="country-btn" onclick="openCountry('ksa')">المملكة العربية السعودية</button>
+        <button class="country-btn" onclick="openCountry('oman')">سلطنة عمان</button>
+        <button class="country-btn" onclick="openCountry('kuwait')">دولة الكويت</button>
 
         <div class="footer">الرجاء اختيار الدولة للمتابعة</div>
     </div>
 
     <script>
-        function openCountry(country) {
-            window.location.href = `forms.html?name=${encodeURIComponent(country)}`;
+        function openCountry(countryKey) {
+            window.location.href = `passcode.html?name=${countryKey}`;
         }
     </script>
 
